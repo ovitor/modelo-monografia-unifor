@@ -1,0 +1,174 @@
+%%
+%% Customizações do abnTeX2 (http://abnTeX2.googlecode.com) para a Universidade XXXX
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is SEU_NOME, SEU_EMAIL
+%%
+%% Further information about abnTeX2 are available on http://abntex2.googlecode.com/
+%%
+
+% ---
+% Modificações do Madson
+% ---
+
+% Comando novo para área de concentração
+\newcommand{\linha}[1]{\def\linha{#1}}
+\newcommand{\imprimirarea}{\linha}
+\newcommand{\matricula}[1]{\def\matricula{#1}}
+
+\newcommand{\nomeprofessorA}[1]{\def\nomeprofessorA{#1}}
+\newcommand{\imprimirnomeprofessorA}{\nomeprofessorA}
+
+\newcommand{\nomeprofessorB}[1]{\def\nomeprofessorB{#1}}
+\newcommand{\imprimirnomeprofessorB}{\nomeprofessorB}
+
+\newcommand{\nomeprofessorC}[1]{\def\nomeprofessorC{#1}}
+\newcommand{\imprimirnomeprofessorC}{\nomeprofessorC}
+
+
+\newcommand{\instituicaoprofessorA}[1]{\def\instituicaoprofessorA{#1}}
+\newcommand{\imprimirinstituicaoprofessorA}{\instituicaoprofessorA}
+
+\newcommand{\instituicaoprofessorB}[1]{\def\instituicaoprofessorB{#1}}
+\newcommand{\imprimirinstituicaoprofessorB}{\instituicaoprofessorB}
+
+\newcommand{\instituicaoprofessorC}[1]{\def\instituicaoprofessorC{#1}}
+\newcommand{\imprimirinstituicaoprofessorC}{\instituicaoprofessorC}
+
+\renewcommand\assinatura[1]{%
+  {\vspace{.35cm}\centering\noindent\rule{10cm}{0.3pt}\\#1\\\vspace{.35cm}}
+}
+
+\renewcommand{\ABNTEXchapterfont}{\selectfont}
+
+% ---
+% INICIO DAS CUSTOMIZACOES PARA A UNIFOR 
+% ---
+
+\ProvidesPackage{utils/modelo}[2014/09/01 Criacao desta customizacao do abnTeX2]
+
+% alterando a capa
+\renewcommand{\imprimircapa}{%
+  \begin{capa}%
+
+  \begin{figure}[!t]
+    \begin{minipage}[t]{2.2cm}
+      \begin{figure}[H]
+        \includegraphics[width=2.2cm]{figuras/imagens/logo-unifor.png}
+      \end{figure}
+    \end{minipage} \hfill
+    \begin{minipage}[t]{0.85\textwidth}
+      \SingleSpacing
+      \textbf{\large} \\
+      \textbf{\large\imprimirinstituicaocapa} \\
+      \textbf{\large\imprimirdepartamento} \\
+      \textbf{\large\imprimirprograma} \\
+      \imprimircurso
+    \end{minipage}
+  \end{figure}
+
+    \vspace*{4cm}
+
+    \begin{center}
+    \textbf{\MakeUppercase{\Large\imprimirtitulo}}
+    \end{center}
+
+    \vspace*{3cm}
+    \center
+    \SingleSpacing
+    \imprimirautor \\
+    \imprimirmatricula
+    \vfill
+
+    \begin{center}
+    \SingleSpacing
+    \imprimirlocal \\ 
+    \imprimirdata
+    \end{center}
+
+    \vspace*{1cm}
+  \end{capa}
+}
+
+
+% folha de rosto 
+
+\makeatletter
+
+\renewcommand{\folhaderostocontent}{
+\begin{center}
+
+\MakeUppercase{\large\imprimirautor}
+
+    \vspace*{\fill}\vspace*{\fill}
+
+    \begin{center}
+    \textbf{\MakeUppercase{\Large\imprimirtitulo}}
+    \end{center}
+
+\vspace*{\fill}
+
+\abntex@ifnotempty{\imprimirpreambulo}{%
+  \hspace{.4\textwidth}
+  \begin{minipage}{.35\textwidth}
+  \SingleSpacing
+  \imprimirpreambulo
+  \end{minipage}%
+  \vspace*{\fill}
+}%
+
+%{\large\imprimirorientadorRotulo~\imprimirorientador\par}
+
+%\abntex@ifnotempty{\imprimircoorientador}{%
+%  {\large\imprimircoorientadorRotulo~\imprimircoorientador}%
+%}%
+
+\vspace*{\fill}
+
+{\abntex@ifnotempty{\imprimirinstituicao}{\imprimirinstituicao\vspace*{\fill}}}
+
+\SingleSpacing
+\imprimirlocal \\
+\imprimirdata
+
+\vspace*{1cm}
+\end{center}
+}
+
+\makeatother
+
+
+
+% -----
+% Não modificar as linhas abaixo!
+% -----
+\newcommand{\imprimirareaRotulo}{Linha de Pesquisa:}
+\instituicao{}
+
+\tipotrabalho{Monografia} 
+\preambulo{% 
+Monografia apresentada como exigência parcial para a obtenção do grau de
+bacharel em Direito, sob a orientação de conteúdo de \imprimirorientador~ e 
+orientação metodológica de \imprimircoorientador.}
+%\imprimirareaRotulo~\imprimirarea
+
+\local{Fortaleza -- CE}
+\newcommand{\imprimirinstituicaocapa}{FUNDAÇÃO EDSON QUEIROZ}
+\newcommand{\imprimirdepartamento}{UNIVERSIDADE DE FORTALEZA - UNIFOR}
+\newcommand{\imprimirprograma}{CENTRO DE CIÊNCIAS JURÍDICAS - CCJ}
+\newcommand{\imprimircurso}{Curso de Direito}
+\newcommand{\imprimirmatricula}{Matrícula: \matricula}
+\data{\today}
+
+% ---
+% FIM DAS CUSTOMIZACOES PARA UNIFOR 
+% ---
