@@ -56,6 +56,10 @@
 
 \ProvidesPackage{utils/modelo}[2014/09/01 Criacao desta customizacao do abnTeX2]
 
+% alterando tamanho das secoes
+\usepackage{titlesec}
+\titleformat*{\section}{\normalsize\bfseries}
+
 % alterando a capa
 \renewcommand{\imprimircapa}{%
   \begin{capa}%

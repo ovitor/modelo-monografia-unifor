@@ -1,6 +1,6 @@
 TEX = latexmk -f -pdf -shell-escape -interaction=nonstopmode -file-line-error
 
-all: images mono clean
+all: mono 
 	echo 'ok'
 
 mono: compile
