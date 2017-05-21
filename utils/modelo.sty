@@ -56,9 +56,13 @@
 
 \ProvidesPackage{utils/modelo}[2014/09/01 Criacao desta customizacao do abnTeX2]
 
-% alterando tamanho das secoes
-\usepackage{titlesec}
-\titleformat*{\section}{\normalsize\bfseries}
+% alterando estilo e tamanho de fonte (capitulos e secoes)
+\renewcommand{\ABNTEXchapterfontsize}{\Large}
+\renewcommand{\ABNTEXsectionfont}{\fontseries{b}}
+\renewcommand{\ABNTEXsectionfontsize}{\large}
+
+\renewcommand{\ABNTEXsubsectionfont}{\itshape}
+\renewcommand{\ABNTEXsubsectionfontsize}{\large}
 
 % alterando a capa
 \renewcommand{\imprimircapa}{%
@@ -122,8 +126,8 @@
 \vspace*{\fill}
 
 \abntex@ifnotempty{\imprimirpreambulo}{%
-  \hspace{.4\textwidth}
-  \begin{minipage}{.35\textwidth}
+  \hspace{.5\textwidth}
+  \begin{minipage}{.49\textwidth}
   \SingleSpacing
   \imprimirpreambulo
   \end{minipage}%

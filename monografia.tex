@@ -34,7 +34,7 @@
 	twoside,			% para impressão em recto e verso. Oposto a oneside
 	a4paper,			% tamanho do papel.
 	% -- opções da classe abntex2 --
-	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
 	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
 	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
 	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
@@ -76,6 +76,10 @@
 % ---
 \setlist[itemize]{noitemsep, topsep=0pt, leftmargin=1.75cm}
 \graphicspath{{figuras/imagens/}}  % Inclusão dos paths para imagens
+
+% adicionando introducao ao sumario
+%\newcommand*{\SkipTocEntry}{\addtocontents{toc}{\gobblefive}}
+%\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 
 % ---
 % Configurações do pacote backref
@@ -133,7 +137,7 @@
 \setlength{\parindent}{1.3cm}
 
 % Controle do espaçamento entre um parágrafo e outro:
-\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+\setlength{\parskip}{0.4cm}  % tente também \onelineskip
 
 % ---
 % compila o indice

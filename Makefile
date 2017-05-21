@@ -1,13 +1,17 @@
 TEX = latexmk -f -pdf -shell-escape -interaction=nonstopmode -file-line-error
+PREVIEW = open -a /Applications/Preview.app
 
 all: mono 
 	echo 'ok'
 
-mono: compile
+mono: compile preview
 	echo 'ok'
 
 compile:
 	$(TEX) monografia.tex
+
+preview:
+	$(PREVIEW) monografia.pdf
 
 images:
 	cd figuras/fontes; \
