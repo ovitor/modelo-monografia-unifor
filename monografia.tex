@@ -113,6 +113,13 @@
 
 % informações do PDF
 \makeatletter
+
+% remove identação das seções
+\def\@hangfrom#1{\setbox\@tempboxa\hbox{{#1}}%
+      \hangindent 0pt%\wd\@tempboxa
+      \noindent\box\@tempboxa}
+\makeatother
+
 \hypersetup{
      	%pagebackref=true,
 		pdftitle={\@title},
